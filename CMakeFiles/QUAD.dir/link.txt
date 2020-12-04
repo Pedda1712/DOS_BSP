@@ -1,0 +1,1 @@
+/usr/local/djgpp/bin/i586-pc-msdosdjgpp-g++     CMakeFiles/QUAD.dir/MAIN_VGA.C.o CMakeFiles/QUAD.dir/GFX.C.o CMakeFiles/QUAD.dir/WALL.C.o CMakeFiles/QUAD.dir/MATH.C.o CMakeFiles/QUAD.dir/KEY_INPUT.C.o  -o QUAD 

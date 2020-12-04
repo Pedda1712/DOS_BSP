@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/peter/DOSCODE",
+  "command": "/usr/local/djgpp/bin/i586-pc-msdosdjgpp-g++      -O3 -Wall -Wextra -o CMakeFiles/QUAD.dir/MAIN_VGA.C.o -c /home/peter/DOSCODE/MAIN_VGA.C",
+  "file": "/home/peter/DOSCODE/MAIN_VGA.C"
+},
+{
+  "directory": "/home/peter/DOSCODE",
+  "command": "/usr/local/djgpp/bin/i586-pc-msdosdjgpp-g++      -O3 -Wall -Wextra -o CMakeFiles/QUAD.dir/GFX.C.o -c /home/peter/DOSCODE/GFX.C",
+  "file": "/home/peter/DOSCODE/GFX.C"
+},
+{
+  "directory": "/home/peter/DOSCODE",
+  "command": "/usr/local/djgpp/bin/i586-pc-msdosdjgpp-g++      -O3 -Wall -Wextra -o CMakeFiles/QUAD.dir/WALL.C.o -c /home/peter/DOSCODE/WALL.C",
+  "file": "/home/peter/DOSCODE/WALL.C"
+},
+{
+  "directory": "/home/peter/DOSCODE",
+  "command": "/usr/local/djgpp/bin/i586-pc-msdosdjgpp-g++      -O3 -Wall -Wextra -o CMakeFiles/QUAD.dir/MATH.C.o -c /home/peter/DOSCODE/MATH.C",
+  "file": "/home/peter/DOSCODE/MATH.C"
+},
+{
+  "directory": "/home/peter/DOSCODE",
+  "command": "/usr/local/djgpp/bin/i586-pc-msdosdjgpp-g++      -O3 -Wall -Wextra -o CMakeFiles/QUAD.dir/KEY_INPUT.C.o -c /home/peter/DOSCODE/KEY_INPUT.C",
+  "file": "/home/peter/DOSCODE/KEY_INPUT.C"
+}
+]
