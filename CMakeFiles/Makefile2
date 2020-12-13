@@ -74,12 +74,12 @@ clean: CMakeFiles/QUAD.dir/clean
 CMakeFiles/QUAD.dir/all:
 	$(MAKE) -f CMakeFiles/QUAD.dir/build.make CMakeFiles/QUAD.dir/depend
 	$(MAKE) -f CMakeFiles/QUAD.dir/build.make CMakeFiles/QUAD.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/peter/DOSCODE/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target QUAD"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/peter/DOSCODE/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target QUAD"
 .PHONY : CMakeFiles/QUAD.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/QUAD.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/peter/DOSCODE/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/peter/DOSCODE/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/QUAD.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/peter/DOSCODE/CMakeFiles 0
 .PHONY : CMakeFiles/QUAD.dir/rule

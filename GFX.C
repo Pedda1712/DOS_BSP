@@ -137,7 +137,7 @@ void tTriangle (vec2D v1 , vec2D v2, vec2D v3, byte col) {
     }
 }
 
-void ucTriangle (vec2D v1 , vec2D v2, vec2D v3){ //draws a generic triangle
+void ucTriangle (vec2D v1 , vec2D v2, vec2D v3,byte col){ //draws a generic triangle
     //sort the vertices
     vec2D min,mid,max;
     if( v1.y > v2.y ) {
@@ -159,7 +159,7 @@ void ucTriangle (vec2D v1 , vec2D v2, vec2D v3){ //draws a generic triangle
     }
 
     //Draw the triangles(s)
-    byte col = 12;
+
     if ( max.y == mid.y){ // if the triangle is flat on the bottom
         bTriangle(min,mid,max,col);
     }else if(min.y == mid.y){ // if the triangle is flat on the top

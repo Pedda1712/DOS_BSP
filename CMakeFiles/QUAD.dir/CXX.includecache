@@ -6,33 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/peter/DOSCODE/GFX.C
-GFX.H
-/home/peter/DOSCODE/GFX.H
-string.h
--
-dos.h
--
-sys/nearptr.h
--
-stdio.h
--
+/home/peter/DOSCODE/BSP.H
+WALL.H
+/home/peter/DOSCODE/WALL.H
+MATH.H
+/home/peter/DOSCODE/MATH.H
 
 /home/peter/DOSCODE/GFX.H
 MATH.H
 /home/peter/DOSCODE/MATH.H
-
-/home/peter/DOSCODE/KEY_INPUT.C
-KEY_INPUT.H
-/home/peter/DOSCODE/KEY_INPUT.H
-stdio.h
--
-go32.h
--
-dpmi.h
--
-dos.h
--
 
 /home/peter/DOSCODE/KEY_INPUT.H
 
@@ -51,6 +33,8 @@ math.h
 -
 string.h
 -
+BSP.H
+/home/peter/DOSCODE/BSP.H
 MATH.H
 /home/peter/DOSCODE/MATH.H
 GFX.H
@@ -60,25 +44,7 @@ KEY_INPUT.H
 WALL.H
 /home/peter/DOSCODE/WALL.H
 
-/home/peter/DOSCODE/MATH.C
-MATH.H
 /home/peter/DOSCODE/MATH.H
-math.h
--
-stdio.h
--
-
-/home/peter/DOSCODE/MATH.H
-
-/home/peter/DOSCODE/WALL.C
-WALL.H
-/home/peter/DOSCODE/WALL.H
-GFX.H
-/home/peter/DOSCODE/GFX.H
-MATH.H
-/home/peter/DOSCODE/MATH.H
-stdio.h
--
 
 /home/peter/DOSCODE/WALL.H
 MATH.H

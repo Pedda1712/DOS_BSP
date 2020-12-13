@@ -123,6 +123,33 @@ QUAD/fast:
 	$(MAKE) -f CMakeFiles/QUAD.dir/build.make CMakeFiles/QUAD.dir/build
 .PHONY : QUAD/fast
 
+BSP.o: BSP.C.o
+
+.PHONY : BSP.o
+
+# target to build an object file
+BSP.C.o:
+	$(MAKE) -f CMakeFiles/QUAD.dir/build.make CMakeFiles/QUAD.dir/BSP.C.o
+.PHONY : BSP.C.o
+
+BSP.i: BSP.C.i
+
+.PHONY : BSP.i
+
+# target to preprocess a source file
+BSP.C.i:
+	$(MAKE) -f CMakeFiles/QUAD.dir/build.make CMakeFiles/QUAD.dir/BSP.C.i
+.PHONY : BSP.C.i
+
+BSP.s: BSP.C.s
+
+.PHONY : BSP.s
+
+# target to generate assembly for a file
+BSP.C.s:
+	$(MAKE) -f CMakeFiles/QUAD.dir/build.make CMakeFiles/QUAD.dir/BSP.C.s
+.PHONY : BSP.C.s
+
 GFX.o: GFX.C.o
 
 .PHONY : GFX.o
@@ -267,6 +294,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... QUAD"
+	@echo "... BSP.o"
+	@echo "... BSP.i"
+	@echo "... BSP.s"
 	@echo "... GFX.o"
 	@echo "... GFX.i"
 	@echo "... GFX.s"

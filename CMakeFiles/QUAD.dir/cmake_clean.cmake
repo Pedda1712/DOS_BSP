@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/QUAD.dir/BSP.C.o"
   "CMakeFiles/QUAD.dir/GFX.C.o"
   "CMakeFiles/QUAD.dir/KEY_INPUT.C.o"
   "CMakeFiles/QUAD.dir/MAIN_VGA.C.o"

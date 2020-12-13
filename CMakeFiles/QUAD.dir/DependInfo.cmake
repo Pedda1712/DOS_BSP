@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/peter/DOSCODE/BSP.C" "/home/peter/DOSCODE/CMakeFiles/QUAD.dir/BSP.C.o"
   "/home/peter/DOSCODE/GFX.C" "/home/peter/DOSCODE/CMakeFiles/QUAD.dir/GFX.C.o"
   "/home/peter/DOSCODE/KEY_INPUT.C" "/home/peter/DOSCODE/CMakeFiles/QUAD.dir/KEY_INPUT.C.o"
   "/home/peter/DOSCODE/MAIN_VGA.C" "/home/peter/DOSCODE/CMakeFiles/QUAD.dir/MAIN_VGA.C.o"

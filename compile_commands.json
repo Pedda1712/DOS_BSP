@@ -23,5 +23,10 @@
   "directory": "/home/peter/DOSCODE",
   "command": "/usr/local/djgpp/bin/i586-pc-msdosdjgpp-g++      -O3 -Wall -Wextra -o CMakeFiles/QUAD.dir/KEY_INPUT.C.o -c /home/peter/DOSCODE/KEY_INPUT.C",
   "file": "/home/peter/DOSCODE/KEY_INPUT.C"
+},
+{
+  "directory": "/home/peter/DOSCODE",
+  "command": "/usr/local/djgpp/bin/i586-pc-msdosdjgpp-g++      -O3 -Wall -Wextra -o CMakeFiles/QUAD.dir/BSP.C.o -c /home/peter/DOSCODE/BSP.C",
+  "file": "/home/peter/DOSCODE/BSP.C"
 }
 ]
