@@ -1,3 +1,0 @@
-/home/peter/DOSCODE/CMakeFiles/rebuild_cache.dir
-/home/peter/DOSCODE/CMakeFiles/edit_cache.dir
-/home/peter/DOSCODE/CMakeFiles/QUAD.dir

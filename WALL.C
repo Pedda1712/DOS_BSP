@@ -87,7 +87,7 @@ bool clipWallAgainstPlane (Wall* line,Wall* plane){
 
 	vec2D lineToPlaneVec1 = {p3.x-p1.x,p3.y-p1.y};
 	vec2D lineToPlaneVec2 = {p3.x-p2.x,p3.y-p2.y};
-	//Calculate Dot Product between Wall Normal and PlayerToWall Normal
+	//Calculate Dot Product between Wall Normal and Plane Normal
 	fp dot1 = (planeNorm.x * lineToPlaneVec1.x + planeNorm.y * lineToPlaneVec1.y);
 	fp dot2 = (planeNorm.x * lineToPlaneVec2.x + planeNorm.y * lineToPlaneVec2.y);
 
@@ -153,11 +153,6 @@ bool sliceWallWithPlane (Wall* line,Wall* line2,Wall* plane){
 	if( divisor == 0) return false;
 
 	fp t = ((p1.x-p3.x)*(p3.y-p4.y)-(p1.y-p3.y)*(p3.x-p4.x))/divisor;
-
-	/*
-		NOTE: We do not need to check if the Wall even intersects the plane (divisor == 0?), that is
-		already accuonted for with the Dot Product calculation earlier in the method
-	*/
 
 	vec2D intersection;
 	intersection.x = p1.x + ((t*(p2.x-p1.x))>>F_PREC);

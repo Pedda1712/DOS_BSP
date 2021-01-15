@@ -30,7 +30,7 @@ int main () {
 	BSP_Node* root = BSP_allocateNode();
 	root->data = firstWall;
 
-	int numWalls = 4000;
+	int numWalls = 7;
 	printf("Generiere Baum ... \n");
 	printf("- aus %i Waenden\n",numWalls+1);
 	for(int i = 0; i < numWalls; i++){
