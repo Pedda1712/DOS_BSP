@@ -4,6 +4,8 @@
 #include <sys/nearptr.h>
 #include <stdio.h>
 
+#define SCREEN_TOP_EDGE 0
+
 byte *VGA= (byte *)0xA0000; /* pointer to screen memory */
 
 byte buf [320 * 200]; /* offscreen memory buffer*/
@@ -11,6 +13,8 @@ byte buf [320 * 200]; /* offscreen memory buffer*/
 /*  (y<<8)+(y<<6)) is the same as 320*y */
 #define PX(x , y, c)    VGA[((y) << 8) + ((y) << 6) + (x)]=(c) /* write directly into memory */
 #define PXDB(x , y , c) buf[((y) << 8) + ((y) << 6) + (x)]=(c) /*write into offscreen buffer*/
+
+#define WIREFRAME 0
 
 void setMode (unsigned char mode) { //Sets 'mode' as graphics mode
     union REGS regs;
@@ -61,14 +65,14 @@ void bTriangle(vec2D v1 , vec2D v2, vec2D v3, byte col){
         min = &current_x1;
     }
 
-    if(v1.y < 0){ // If the Triangle is out of (vertical) bounds
-	    int diff = -v1.y;
-	    v1.y = 0;
+    if(v1.y < 0 + SCREEN_TOP_EDGE){ // If the Triangle is out of (vertical) bounds
+	    int diff = -v1.y + SCREEN_TOP_EDGE;
+	    v1.y = 0 + SCREEN_TOP_EDGE;
 	    current_x1 += p1_x_step * diff;
 	    current_x2 += p2_x_step * diff;
     }
-    if(v2.y > 199){
-	    v2.y = 199;
+    if(v2.y > 199 - SCREEN_TOP_EDGE){
+	    v2.y = 199 - SCREEN_TOP_EDGE;
     }
 
     for(int i = (v1.y);i <= (v2.y);++i){
@@ -77,10 +81,13 @@ void bTriangle(vec2D v1 , vec2D v2, vec2D v3, byte col){
 		    PXDB( ( (*min) >> F_PREC )+k,i,col);
 
 	    }*/
-	  memset(buf + ((*min) >> F_PREC) + (i * 320),col,(((*max)-(*min)) >> F_PREC)+1);
+        if(!WIREFRAME)
+            memset(buf + ((*min) >> F_PREC) + (i * 320),col,(((*max)-(*min)) >> F_PREC)+1);
 
         PXDB(((*max) >> F_PREC),i,col);
-        PXDB(((*min) >> F_PREC)-1,i,col);
+        
+        if(WIREFRAME)
+            PXDB(((*min) >> F_PREC)-1,i,col);
 
         current_x1 += p1_x_step;
         current_x2 += p2_x_step;
@@ -111,14 +118,14 @@ void tTriangle (vec2D v1 , vec2D v2, vec2D v3, byte col) {
         min = &current_x1;
     }
 
-    if(v3.y > 199){
-	    int diff = v3.y - 199;
-	    v3.y = 199;
+    if(v3.y > 199 - SCREEN_TOP_EDGE){
+	    int diff = v3.y - (199 - SCREEN_TOP_EDGE);
+	    v3.y = 199 - SCREEN_TOP_EDGE;
 	    current_x1 -= p1_x_step * diff;
 	    current_x2 -= p2_x_step * diff;
     }
-    if(v1.y < 0){
-	    v1.y = 0;
+    if(v1.y < 0 + SCREEN_TOP_EDGE){
+	    v1.y = 0 + SCREEN_TOP_EDGE;
     }
 
     for (int i = v3.y; i >= v1.y; --i) {
@@ -127,10 +134,14 @@ void tTriangle (vec2D v1 , vec2D v2, vec2D v3, byte col) {
             PXDB(((*min) >> F_PREC)+k,i,col);
 
         }*/
-        memset(buf + ((*min) >> F_PREC) + (i * 320),col,(((*max)-(*min)) >> F_PREC)+1);
-
+        
+        if(!WIREFRAME)
+            memset(buf + ((*min) >> F_PREC) + (i * 320),col,(((*max)-(*min)) >> F_PREC)+1);
+    
         PXDB(((*max) >> F_PREC),i,col);
-        PXDB(((*min) >> F_PREC)-1,i,col);
+        
+        if(WIREFRAME)
+            PXDB(((*min) >> F_PREC)-1,i,col);
 
         current_x1 -= p1_x_step;
         current_x2 -= p2_x_step;
@@ -157,6 +168,8 @@ void ucTriangle (vec2D v1 , vec2D v2, vec2D v3,byte col){ //draws a generic tria
         mid = max;
         max = v3;
     }
+    
+    if(max.y == min.y) return;
 
     //Draw the triangles(s)
 

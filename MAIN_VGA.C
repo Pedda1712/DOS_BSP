@@ -30,7 +30,7 @@ int main () {
 	BSP_Node* root = BSP_allocateNode();
 	root->data = firstWall;
 
-	int numWalls = 7;
+	int numWalls = 10;
 	printf("Generiere Baum ... \n");
 	printf("- aus %i Waenden\n",numWalls+1);
 	for(int i = 0; i < numWalls; i++){
@@ -39,16 +39,16 @@ int main () {
 	printf("- mit %i Knoten\n",BSP_countNodes(root));
 	printf("- mit Tiefe %i\n",BSP_countDepth(root));
 
-	while(!checkKeyState(0x11)){}
+	while(!checkKeyState(0x11));
 
 	Wall* clipWalls = (Wall*)malloc(sizeof(Wall)*3);
 
 	clipWalls[0] = { //right edge of screen
 	    {0,0},
-	    {-253*100,256*100}
+	    {-250*100,256*100}
 	};
 	clipWalls[1] = { //left edge of screen
-	    	{255*100,256*100},
+	    	{250*100,256*100},
 		{0,0}
 	};
 	clipWalls[2] = { // near Plane

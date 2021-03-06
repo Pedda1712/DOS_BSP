@@ -91,7 +91,7 @@ bool clipWallAgainstPlane (Wall* line,Wall* plane){
 	fp dot1 = (planeNorm.x * lineToPlaneVec1.x + planeNorm.y * lineToPlaneVec1.y);
 	fp dot2 = (planeNorm.x * lineToPlaneVec2.x + planeNorm.y * lineToPlaneVec2.y);
 
-	if((dot1 < 0 && dot2 < 0)){ // If both Points are not on the correct side
+	if((dot1 <= 0 && dot2 <= 0)){ // If both Points are not on the correct side
 		return false; //false -> the entire wall is invisible
 	}else if((dot1 > 0 && dot2 > 0)){ // If both Points are on the correct side
 		return true;
