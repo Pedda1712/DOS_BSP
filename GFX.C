@@ -14,7 +14,7 @@ byte buf [320 * 200]; /* offscreen memory buffer*/
 #define PX(x , y, c)    VGA[((y) << 8) + ((y) << 6) + (x)]=(c) /* write directly into memory */
 #define PXDB(x , y , c) buf[((y) << 8) + ((y) << 6) + (x)]=(c) /*write into offscreen buffer*/
 
-#define WIREFRAME 0
+//#define WIREFRAME
 
 void setMode (unsigned char mode) { //Sets 'mode' as graphics mode
     union REGS regs;
@@ -81,13 +81,15 @@ void bTriangle(vec2D v1 , vec2D v2, vec2D v3, byte col){
 		    PXDB( ( (*min) >> F_PREC )+k,i,col);
 
 	    }*/
-        if(!WIREFRAME)
+        #ifndef WIREFRAME
             memset(buf + ((*min) >> F_PREC) + (i * 320),col,(((*max)-(*min)) >> F_PREC)+1);
+	#endif
 
         PXDB(((*max) >> F_PREC),i,col);
         
-        if(WIREFRAME)
+        #ifdef WIREFRAME
             PXDB(((*min) >> F_PREC)-1,i,col);
+	#endif
 
         current_x1 += p1_x_step;
         current_x2 += p2_x_step;
@@ -135,13 +137,15 @@ void tTriangle (vec2D v1 , vec2D v2, vec2D v3, byte col) {
 
         }*/
         
-        if(!WIREFRAME)
+        #ifndef WIREFRAME
             memset(buf + ((*min) >> F_PREC) + (i * 320),col,(((*max)-(*min)) >> F_PREC)+1);
+	#endif
     
         PXDB(((*max) >> F_PREC),i,col);
         
-        if(WIREFRAME)
+        #ifdef WIREFRAME
             PXDB(((*min) >> F_PREC)-1,i,col);
+	#endif
 
         current_x1 -= p1_x_step;
         current_x2 -= p2_x_step;

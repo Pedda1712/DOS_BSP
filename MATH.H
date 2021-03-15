@@ -3,7 +3,7 @@
 //resoultion of the Sine/Cosine Tables
 #define TRIG_RESOLUTION 1024
 /* Fixed Point Math*/
-#define F_PREC 16 /* number of bits that represent the fractional part*/
+#define F_PREC 12 /* number of bits that represent the fractional part*/
 typedef int fp;
 
 typedef unsigned char byte; /* define unsigned char as a byte */

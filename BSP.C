@@ -32,6 +32,8 @@ void BSP_tadWall(Wall w){
 	if(draw)
 		draw = clipWallAgainstPlane(&w,&clip_Walls[2]);
 	if(draw)
+		draw = clipWallAgainstPlane(&w,&clip_Walls[3]);
+	if(draw)
 		drawWall(&w);
 }
 

@@ -13,5 +13,5 @@ set (SOURCES
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_executable(QUAD ${SOURCES})
-target_compile_options(QUAD PUBLIC -O3 -Wall -Wextra)
+add_executable(BSP ${SOURCES})
+target_compile_options(BSP PUBLIC -O3 -Wall -Wextra)

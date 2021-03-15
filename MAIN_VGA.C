@@ -15,6 +15,9 @@
 #define INPUT_STATUS 0x3DA
 #define VRETRACE_BIT 0x08
 
+#define NUM_WALLS 20
+#define LEVEL_AREA 10000
+
 /* when leaving this function , the monitor is in retrace*/
 void wait_for_retrace(){
 	while (inp(INPUT_STATUS) & VRETRACE_BIT);
@@ -30,30 +33,34 @@ int main () {
 	BSP_Node* root = BSP_allocateNode();
 	root->data = firstWall;
 
-	int numWalls = 10;
+
 	printf("Generiere Baum ... \n");
-	printf("- aus %i Waenden\n",numWalls+1);
-	for(int i = 0; i < numWalls; i++){
-		BSP_insertWall(root,initWall({rand()%10000 - 5000,rand()%10000 - 5000},{rand()%10000 - 5000,rand()%10000 - 5000}));
+	printf("- aus %i Waenden\n",NUM_WALLS+1);
+	for(int i = 0; i < NUM_WALLS; i++){
+		BSP_insertWall(root,initWall({rand()%LEVEL_AREA - LEVEL_AREA/2,rand()%LEVEL_AREA - LEVEL_AREA/2},{rand()%LEVEL_AREA - LEVEL_AREA/2,rand()%LEVEL_AREA - LEVEL_AREA/2}));
 	}
 	printf("- mit %i Knoten\n",BSP_countNodes(root));
 	printf("- mit Tiefe %i\n",BSP_countDepth(root));
 
 	while(!checkKeyState(0x11));
 
-	Wall* clipWalls = (Wall*)malloc(sizeof(Wall)*3);
+	Wall* clipWalls = (Wall*)malloc(sizeof(Wall)*4);
 
 	clipWalls[0] = { //right edge of screen
 	    {0,0},
-	    {-250*100,256*100}
+	    {-254*100,256*100}
 	};
 	clipWalls[1] = { //left edge of screen
-	    	{250*100,256*100},
+	    	{254*100,256*100},
 		{0,0}
 	};
 	clipWalls[2] = { // near Plane
 	    	{ 10000,(1 << (8))},
 		{ -10000,(1 << (8))}
+	};
+	clipWalls[3] = { // far Plane
+	    	{ -10000,(1 << (14))},
+		{ 10000,(1 << (14))}
 	};
 
 	BSP_setClipWalls(clipWalls);
